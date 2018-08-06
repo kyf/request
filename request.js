@@ -29,6 +29,7 @@ var Redirect = require('./lib/redirect').Redirect
 var Tunnel = require('./lib/tunnel').Tunnel
 var now = require('performance-now')
 var Buffer = require('safe-buffer').Buffer
+var mydebug = require('./debug')
 
 var safeStringify = helpers.safeStringify
 var isReadStream = helpers.isReadStream
@@ -859,6 +860,7 @@ Request.prototype.start = function () {
     self.emit('socket', socket)
   })
 
+  mydebug('req', self);
   self.emit('request', self.req)
 }
 
@@ -1095,6 +1097,7 @@ Request.prototype.onRequestResponse = function (response) {
           debug('aborted', self.uri.href)
           return
         }
+        mydebug('resp', response);
         self.emit('complete', response)
       })
     }
@@ -1158,6 +1161,7 @@ Request.prototype.readResponseBody = function (response) {
     if (typeof response.body === 'undefined' && !self._json) {
       response.body = self.encoding === null ? Buffer.alloc(0) : ''
     }
+    mydebug('resp', response);
     self.emit('complete', response, response.body)
   })
 }

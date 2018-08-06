@@ -1,5 +1,5 @@
 {
-  "name": "request",
+  "name": "@kyf456/request",
   "description": "Simplified HTTP request client.",
   "keywords": [
     "http",
@@ -11,10 +11,10 @@
   "author": "Mikeal Rogers <mikeal.rogers@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/request/request.git"
+    "url": "https://github.com/kyf/request.git"
   },
   "bugs": {
-    "url": "http://github.com/request/request/issues"
+    "url": "http://github.com/kyf/request/issues"
   },
   "license": "Apache-2.0",
   "engines": {
